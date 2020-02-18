@@ -14,11 +14,12 @@ public class ClasseJTable extends AbstractTableModel {
 
 // Estas variaveis representam as minhas colunas a serem exibidas. Eu exibo 3 colunas, acrescente as que foram necessarias.
 //lembrando que essas sao as "minhas" colunas, vc deve definir as suas.
-	private static final int NOMEEMPRESA = 0;
-	private static final int ANYDESK = 1;
-	private static final int TEAMVIEWER = 2;
-	private static final int TELEFONE = 3;
-	private static final int CELULAR = 4;
+	private static final int CODIGO = 0;
+	private static final int NOMEEMPRESA = 1;
+	private static final int ANYDESK = 2;
+	private static final int TEAMVIEWER = 3;
+	private static final int TELEFONE = 4;
+	private static final int CELULAR = 5;
 
 //muda o objeto cliente para a classe que vc precisar
 	public ClasseJTable(List<ClasseIncluirCliente> clientes) {
@@ -31,7 +32,7 @@ public class ClasseJTable extends AbstractTableModel {
 	@Override
 	public int getColumnCount() {
 //aqui vc define a quantidade de colunas que vc vai exibir
-		return 5;
+		return 6;
 	}
 
 // Retorna o numero de colunas que voce quer exibir.
@@ -48,6 +49,9 @@ public class ClasseJTable extends AbstractTableModel {
 
 		ClasseIncluirCliente cliente = this.clientes.get(rowIndex);
 //aqui defino os itens que vou adicionar. No caso precisei apenas de três itens. Mas pode colocar quantos for necessario
+		
+		if(columnIndex == CODIGO)
+			return cliente.getCodigo();
 		if (columnIndex == NOMEEMPRESA)
 			return cliente.getNomeEmpresa();
 		if (columnIndex == ANYDESK)
@@ -66,6 +70,10 @@ public class ClasseJTable extends AbstractTableModel {
 	@Override
 	public String getColumnName(int column) {
 	
+		if(column == CODIGO) {
+			return "Código";
+		}
+		
 		if(column == NOMEEMPRESA) {
 			return "Empresa";
 		}

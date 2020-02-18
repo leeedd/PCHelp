@@ -3,12 +3,21 @@ package br.com.BackEnd;
 
 public class ClasseIncluirCliente {
 	
+	private String codigo;
 	private String nomeEmpresa ;
 	private String anyDesk ;
 	private String teamViewer;
 	private String telefone ;
 	private String celular;
+	private String observacao;
 	
+	
+	public String getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
 	
 	public String getNomeEmpresa() {
 		return nomeEmpresa;
@@ -40,4 +49,11 @@ public class ClasseIncluirCliente {
 	public void setCelular(String celular) {
 		this.celular = celular;
 	}
+	public String getObservacao() {
+		return observacao;
+	}
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
+	}
+	
 }

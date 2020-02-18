@@ -9,8 +9,8 @@ import br.com.BackEnd.ConexaoDB;
 public class ClasseMain extends ClasseTela {
 
 	public static void main(String[] args) {
-	
-		TelaPrincipal();
+		
+		TelaInicial();
 
 		TestarBanco();
 		
